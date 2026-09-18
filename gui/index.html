@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Qwen PDF 保版翻译</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <header><h1>Qwen PDF 保版翻译</h1><p>Qwen OCR + RetainPDF 排版引擎，不经过 RetainPDF 任务服务。</p></header>
+    <section class="card">
+      <h2>文件</h2>
+      <div class="pick"><input id="inputPdf" placeholder="选择需要翻译的 PDF" readonly /><button id="pickPdf">选择 PDF</button></div>
+      <div class="pick"><input id="outputDir" placeholder="选择输出目录" readonly /><button id="pickOutput">输出目录</button></div>
+    </section>
+    <section class="grid">
+      <div class="card">
+        <h2>Qwen OCR</h2>
+        <label>DashScope API Key<input id="ocrKey" type="password" autocomplete="off" /></label>
+        <label>Base URL<input id="ocrBaseUrl" value="https://dashscope.aliyuncs.com/compatible-mode/v1" /></label>
+        <label>模型<input id="ocrModel" value="qwen3.5-ocr" /></label>
+        <label>并发页数<input id="ocrWorkers" type="number" min="1" max="8" value="3" /></label>
+      </div>
+      <div class="card">
+        <h2>翻译与排版</h2>
+        <label class="check"><input id="sameKey" type="checkbox" checked />翻译使用同一个 Key</label>
+        <label>翻译 API Key<input id="translationKey" type="password" autocomplete="off" disabled /></label>
+        <label>Base URL<input id="translationBaseUrl" value="https://dashscope.aliyuncs.com/compatible-mode/v1" /></label>
+        <label>模型<input id="translationModel" value="qwen-plus" /></label>
+        <div class="row"><label>翻译并发<input id="translationWorkers" type="number" min="1" max="16" value="4" /></label><label>批大小<input id="batchSize" type="number" min="1" max="16" value="4" /></label></div>
+        <div class="row"><label>排版模式<select id="renderMode"><option value="auto">auto</option><option value="typst">typst</option><option value="overlay">overlay</option></select></label><label>字号系数<input id="fontSizeFactor" type="number" min="0.5" max="1.5" step="0.05" value="0.95" /></label></div>
+      </div>
+    </section>
+    <section class="actions"><button id="start" class="primary">开始翻译</button><button id="cancel" disabled>停止</button><button id="openResult" disabled>打开结果</button><span id="status">就绪</span></section>
+    <section class="card log-card"><h2>实时日志</h2><pre id="log"></pre></section>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+</html>

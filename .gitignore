@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*.log
+.env
+.env.*
+!.env.example
+
+# Local portable runtimes and release artifacts are too large for Git.
+/runtime/
+/dist/
+
+# Local inputs, intermediate OCR data, and translated outputs.
+/input/
+/output/
+/_qwen_ocr/
+*.qwen-ocr.json
+
+# Editor and operating-system files.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

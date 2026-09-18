@@ -1,0 +1,8 @@
+{
+  "name": "qwen-retainpdf-gui",
+  "version": "1.0.0",
+  "description": "Qwen OCR and translation with the RetainPDF layout engine",
+  "private": true,
+  "main": "main.js",
+  "license": "MIT"
+}

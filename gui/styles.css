@@ -1,0 +1,29 @@
+:root { color-scheme: dark; font-family: "Microsoft YaHei UI", system-ui, sans-serif; background: #101318; color: #eef2f7; }
+* { box-sizing: border-box; }
+body { margin: 0; background: radial-gradient(circle at top left, #1d2b3a, #101318 46%); }
+main { width: min(940px, calc(100% - 32px)); margin: 24px auto; }
+header h1 { margin: 0 0 6px; font-size: 28px; }
+header p { margin: 0 0 20px; color: #9dacbc; }
+.card { background: #171c23; border: 1px solid #2a3441; border-radius: 12px; padding: 16px; margin-bottom: 14px; box-shadow: 0 12px 28px #0005; }
+h2 { margin: 0 0 13px; font-size: 16px; color: #d9e5f1; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+label { display: block; margin: 10px 0; color: #b9c6d3; font-size: 13px; }
+input, select, button { font: inherit; }
+input, select { width: 100%; margin-top: 6px; padding: 10px 11px; border-radius: 8px; border: 1px solid #344252; color: #f4f7fa; background: #0e1217; outline: none; }
+input:focus, select:focus { border-color: #35c88a; box-shadow: 0 0 0 2px #35c88a25; }
+.pick { display: grid; grid-template-columns: 1fr 110px; gap: 10px; margin-top: 10px; }
+.pick input { margin: 0; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.check { display: flex; align-items: center; gap: 8px; }
+.check input { width: auto; margin: 0; }
+button { border: 1px solid #3a4654; border-radius: 8px; background: #252e38; color: #edf3f8; padding: 10px 16px; cursor: pointer; }
+button:hover:not(:disabled) { border-color: #59d9a2; }
+button:disabled { opacity: .45; cursor: default; }
+.primary { background: #23a86f; border-color: #35c88a; color: white; font-weight: 700; }
+.actions { display: flex; align-items: center; gap: 10px; margin: 4px 0 14px; }
+#status { margin-left: 8px; color: #aab8c7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.log-card { margin-bottom: 24px; }
+pre { height: 220px; overflow: auto; margin: 0; padding: 12px; border-radius: 8px; background: #090c10; border: 1px solid #29333f; color: #b9f5d9; white-space: pre-wrap; word-break: break-word; font: 12px/1.55 Consolas, monospace; }
+pre span { display: inline; }
+pre .error { color: #ff9c9c; }
+@media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
